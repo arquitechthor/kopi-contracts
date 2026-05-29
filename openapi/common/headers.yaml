@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: Kopi Common Headers
+  version: 1.0.0
+
+components:
+  headers:
+    X-Correlation-Id:
+      description: Unique identifier for tracing a request across services
+      schema:
+        type: string
+        format: uuid
+      example: "550e8400-e29b-41d4-a716-446655440000"
+
+  parameters:
+    CorrelationId:
+      name: X-Correlation-Id
+      in: header
+      required: false
+      schema:
+        type: string
+        format: uuid
+      description: Client-supplied correlation ID for distributed tracing
